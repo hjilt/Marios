@@ -38,6 +38,13 @@ public class Bestilling {
 
     public void udskrivOrdre()
     {
-        
+        System.out.println("Ordre ID: " + ordreID);
+        System.out.println("Kunde: " + kunde.getNavn());
+        System.out.println("Pizzaer: ");
+        for(Pizza pizza : pizza)
+            System.out.println(pizza.getNavn());
+        System.out.println("Total pris: " + totalPris + "DKK");
+        System.out.println("Ordre færdiggjort: [" + (erLavet ? "X" : " ") + "]");
+
     }
 }
