@@ -16,6 +16,7 @@ public class BestillingsManager {
         bestillinger.add(bestilling);
         return bestilling;
     }
-    //lavOrdre, ordre søge funktion, fjern ordre, vis ordre, vis lavede ordre, vis ikke-færdige ordre
 
+    //lavOrdre, ordre søge funktion, fjern ordre, vis ordre, vis lavede ordre, vis ikke-færdige ordre
+    //Lav en metode - søge-funktion, der returnerer en Bestilling - den skal tage parameteren ordreID.
 }
