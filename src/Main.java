@@ -25,5 +25,7 @@ public class Main {
         bestillingEt.addPizza(hawaii);
 
         bestillingEt.udskrivOrdre();
+        bestillingEt.lavPizza();
+        bestillingEt.udskrivOrdre();
     }
 }
