@@ -2,17 +2,15 @@ import java.util.ArrayList;
 
 public class BestillingsManager {
     private ArrayList<Bestilling> bestillinger;
-
-    private int ordreID;
-
+    private int bestillingsID;
     public BestillingsManager()
     {
         bestillinger = new ArrayList<>();
-        ordreID = 0;
+        bestillingsID = 0;
     }
 
     public Bestilling lavBestilling(Kunde kunde) {
-        Bestilling bestilling = new Bestilling(kunde,ordreID++);
+        Bestilling bestilling = new Bestilling(kunde,bestillingsID++);
         bestillinger.add(bestilling);
         return bestilling;
     }
