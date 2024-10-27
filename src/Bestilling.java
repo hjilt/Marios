@@ -21,6 +21,10 @@ public class Bestilling {
         udregnPris();
     }
 
+    public int getOrdreID() {
+        return ordreID;
+    }
+
     private void udregnPris() {
         totalPris = 0;
         for(Pizza pizzas : pizza)
