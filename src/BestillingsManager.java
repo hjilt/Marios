@@ -4,7 +4,6 @@ import java.util.*;
 public class BestillingsManager {
     private ArrayList<Bestilling> bestillinger;
     private int bestillingsID;
-    private String detaljer;
     public BestillingsManager()
     {
         bestillinger = new ArrayList<>();
@@ -17,8 +16,8 @@ public class BestillingsManager {
         return bestilling;
     }
 
-    public String getDetaljer() {
-        return detaljer;
+    public boolean Bestilling(){
+        if (getErLavet(true))
     }
 
     //lavOrdre, ordre søge funktion, fjern ordre, vis ordre, vis lavede ordre, vis ikke-færdige ordre
