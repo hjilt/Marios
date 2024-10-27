@@ -4,13 +4,16 @@ import java.util.*;
 public class BestillingsManager {
     private ArrayList<Bestilling> bestillinger;
     private int bestillingsID;
+    private int kundeID;
     public BestillingsManager()
     {
         bestillinger = new ArrayList<>();
         bestillingsID = 0;
+        kundeID = 1;
     }
 
-    public Bestilling lavBestilling(Kunde kunde) {
+    public Bestilling lavBestilling(String kundeNavn) {
+        Kunde kunde = new Kunde(kundeNavn, kundeID++);
         Bestilling bestilling = new Bestilling(kunde,bestillingsID++);
         bestillinger.add(bestilling);
         return bestilling;

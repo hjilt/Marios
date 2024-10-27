@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<Pizza> pizzaListe;
+    public ArrayList<Pizza> pizzaListe;
 
     public Menu() {
         pizzaListe = new ArrayList<>();
