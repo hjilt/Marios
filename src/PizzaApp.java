@@ -4,11 +4,14 @@ public class PizzaApp {
     private static Scanner scanner = new Scanner(System.in);
     private static BestillingsManager bestillingsManager = new BestillingsManager();
     private static Menu menu = new Menu();
+    private static Kunde kunde;
 
     public static void main(String[] args) {
         boolean igang = true;
-        PizzaPersistens persistens = new PizzaPersistens(menu);
-        persistens.hentPizzasFraCSV("pizza-fil.txt");
+        PizzaPersistens pizzaPersistens = new PizzaPersistens(menu);
+        pizzaPersistens.hentPizzasFraCSV("pizza-fil.txt");
+        KundePersistens kundePersistens = new KundePersistens();
+        kundePersistens.hentKunderFromCSV("kunde-fil.txt");
         /*Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
@@ -150,6 +153,11 @@ public class PizzaApp {
         }
     }
 
+    private static void visKunder()
+    {
+
+        for()
+    }
     //Bliver kaldt i main, og printer menu
     private static void visMuligheder()
     {

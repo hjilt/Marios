@@ -1,0 +1,10 @@
+Ole Dolriis;true
+Oskar Tuska;true
+Lasse Vogelsang;false
+Bård Blytt Sandstad;true
+Sha Bab;false
+Lionel Messi;false
+Pablo Escobar;false
+Søren Kierkegaard;true
+Mike Wazowski;false
+Søren Pind;false

@@ -14,7 +14,7 @@ public class BestillingsManager {
     }
 
     public Bestilling lavBestilling(String kundeNavn) {
-        Kunde kunde = new Kunde(kundeNavn, kundeID++);
+        Kunde kunde = new Kunde(kundeNavn, false);
         Bestilling bestilling = new Bestilling(kunde,bestillingsID++);
         bestillinger.add(bestilling);
         return bestilling;

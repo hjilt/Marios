@@ -2,24 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class KundePersistens {
-    private ArrayList<Kunde> kunder;
-    public KundePersistens() {
-        this.kunder = new ArrayList<>();
-    }
 
     public void hentKunderFromCSV(String filNavn) {
         try (BufferedReader br = new BufferedReader(new FileReader(filNavn))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // Split each line by the ';' delimiter
-                String[] pizzaData = line.split(";");
-                if (pizzaData.length == 3) {
-                    String navn = pizzaData[0];
-                    double pris = Double.parseDouble(pizzaData[1]);
-                    String beskrivelse = pizzaData[2];
-                    // Create and add Pizza to Menu
-                    Pizza pizza = new Pizza(navn, pris, beskrivelse);
-                    menu.tilfoejPizza(pizza);  // Directly add to Menu's pizzaListe
+                String[] kundeData = line.split(";");
+                if (kundeData.length == 2) {
+                    String navn = kundeData[0];
+                    boolean erFastKunde = Boolean.parseBoolean(kundeData[1]);
+                    new Kunde(navn, erFastKunde);
                 }
             }
         } catch (IOException e) {

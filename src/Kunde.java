@@ -1,12 +1,19 @@
+import java.util.ArrayList;
+
 public class Kunde {
+    private static int naesteKundeID = 1;
     String navn;
     int kundeID;
-    boolean erFastKunde;
+    boolean erFastKunde = false;
+    private ArrayList<Kunde> kunder = new ArrayList<>();
 
-    public Kunde(String navn, int kundeID) {
+    public Kunde(String navn, boolean erFastKunde) {
     this.navn = navn;
-    this.kundeID = kundeID;
+    this.kundeID = naesteKundeID++;
+    this.erFastKunde = erFastKunde;
+    kunder.add(this);
     }
+
     public String getNavn() {
         return navn;
     }
@@ -18,5 +25,5 @@ public class Kunde {
     public boolean isErFastKunde() {
         return erFastKunde;
     }
-    
+
 }
