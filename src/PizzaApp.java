@@ -25,7 +25,7 @@ public class PizzaApp {
                 case 2:
                     ordreFaerdig();
                     break;
-                /*case 3:
+                case 3:
                     bestillingsManager.visAktive();
                     break;
                 case 4:
@@ -38,7 +38,7 @@ public class PizzaApp {
                 case 6:
                     menu.visMenu();
                     break;
-                    /*
+                  /*
                 case 7:
                     visKunder();
                     break;
@@ -106,7 +106,6 @@ public class PizzaApp {
         System.out.println("Ordre: " + ordreID +" findes ikke.");
         }
     }
-
 
     private static void findOrdrer()
     {

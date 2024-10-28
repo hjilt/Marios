@@ -6,7 +6,6 @@ public class Bestilling {
     private int ordreID;
     private double totalPris;
     private boolean erLavet;
-    private int pizzaNr;
 
     public Bestilling(Kunde kunde, int ordreID) {
         this.kunde = kunde;
