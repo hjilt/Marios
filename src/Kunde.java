@@ -21,12 +21,24 @@ public class Kunde {
     public int getKundeID() {
         return kundeID;
     }
+
+    public static Kunde getKunde(int kundeID) {
+        if(kundeID > 0 && kundeID < kunder.size()) {
+            return kunder.get(kundeID - 1);
+        }
+        else
+        {
+            System.out.println("Kunden er ikke fundet, prøv igen");
+            return null;
+        }
+    }
+
     public static void udskrivKunder()
     {
         for(Kunde k : kunder)
         {
+            System.out.println("\nKundeID: " + k.getKundeID());
             System.out.println("Kundenavn: " + k.getNavn());
-            System.out.println("KundeID: " + k.getKundeID());
             System.out.println("Er fast: [" + (k.erFastKunde ? "X" : " ") + "]");
         }
     }
