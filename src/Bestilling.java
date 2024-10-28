@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Bestilling {
-    private ArrayList<Pizza> pizza =  new ArrayList<Pizza>();
+    private ArrayList<Pizza> pizza;
     private Kunde kunde;
     private int ordreID;
     private double totalPris;
@@ -25,10 +25,11 @@ public class Bestilling {
         return ordreID;
     }
 
-    private void udregnPris() {
+    public double udregnPris() {
         totalPris = 0;
         for(Pizza pizzas : pizza)
             totalPris += pizzas.getPris();
+        return totalPris;
     }
 
     public void lavPizza() {
@@ -42,14 +43,13 @@ public class Bestilling {
 
     public void udskrivOrdre()
     {
-        System.out.println("\nBestilling: ");
+        System.out.println("\nOrdre ID: " + ordreID);
         for(Pizza pizza : pizza)
         {
             System.out.println(pizza.getNavn());
         }
         System.out.println("Total pris: " + totalPris + "DKK");
-        System.out.println("\nOrdre færdiggjort: [" + (erLavet ? "X" : " ") + "]");
-        System.out.println("Kunde: " + kunde.getNavn());
-        System.out.println("Ordre ID: " + ordreID);
+        System.out.println("Ordre færdiggjort: [" + (erLavet ? "X" : " ") + "]");
+        System.out.println("Kunde: " + this.kunde.getNavn());
     }
 }

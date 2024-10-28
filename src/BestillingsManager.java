@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.*;
 
 public class BestillingsManager {
-    private ArrayList<Bestilling> bestillinger;
+    public ArrayList<Bestilling> bestillinger;
     private int bestillingsID;
     private int kundeID;
     public BestillingsManager()
@@ -17,6 +17,23 @@ public class BestillingsManager {
         Bestilling bestilling = new Bestilling(kunde,bestillingsID++);
         bestillinger.add(bestilling);
         return bestilling;
+    }
+
+    public void visAktive()
+    {
+        System.out.println("Aktive bestillinger: ");
+        boolean aktiveBestillinger = false;
+        for (Bestilling b : bestillinger) {
+            if(b.getErLavet() == false)
+            {
+                b.udskrivOrdre();
+                aktiveBestillinger = true;
+            }
+        }
+        if(!aktiveBestillinger)
+        {
+            System.out.println("Ingen aktive bestillinger");
+        }
     }
 
     /*public boolean Bestilling(){

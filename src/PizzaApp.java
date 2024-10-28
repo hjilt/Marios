@@ -8,7 +8,7 @@ public class PizzaApp {
     public static void main(String[] args) {
         boolean igang = true;
         Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
-        Pizza majs = new Pizza("Dynamit pizza", 129, "æfeg");
+        Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
         menu.tilfoejPizza(majs);
 
@@ -24,11 +24,11 @@ public class PizzaApp {
                     break;
                 /*case 2:
                     ordreFaerdig();
+                    break;*/
+                case 2:
+                    bestillingsManager.visAktive();
                     break;
-                case 3:
-                    visAktiveBestillinger();
-                    break;
-                case 4:
+                /*case 4:
                     visFaerdigeBestillinger();
                     break;
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
@@ -74,11 +74,13 @@ public class PizzaApp {
                 System.out.println("Ugyldigt pizza-nummer, prøv igen.");
             }
         }
-        System.out.println("Bestillingen er lavet til: " + kundeNavn);
+        System.out.println("Bestillingen er lavet til: " + kundeNavn + ". Pris: " + bestilling.udregnPris());
     }
+
+    //Bliver kaldt i main, og printer menu
     private static void visMuligheder()
     {
-        System.out.println("1: Ny ordre");
+        System.out.println("\n1: Ny ordre");
         System.out.println("2: Færdiggør ordrer");
         System.out.println("3: Aktive ordrer");
         System.out.println("4: Tidligere ordrer");
