@@ -5,7 +5,7 @@ public class Kunde {
     String navn;
     int kundeID;
     boolean erFastKunde = false;
-    private ArrayList<Kunde> kunder = new ArrayList<>();
+    public ArrayList<Kunde> kunder = new ArrayList<>();
 
     public Kunde(String navn, boolean erFastKunde) {
     this.navn = navn;
@@ -20,6 +20,13 @@ public class Kunde {
 
     public int getKundeID() {
         return kundeID;
+    }
+    public void udskrivKunder()
+    {
+        for(Kunde k : kunder)
+        {
+            System.out.println(k.getNavn());
+        }
     }
 
     public boolean isErFastKunde() {

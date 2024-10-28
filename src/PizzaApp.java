@@ -4,18 +4,18 @@ public class PizzaApp {
     private static Scanner scanner = new Scanner(System.in);
     private static BestillingsManager bestillingsManager = new BestillingsManager();
     private static Menu menu = new Menu();
-    private static Kunde kunde;
-
+    private static Kunde kunder;
     public static void main(String[] args) {
         boolean igang = true;
         PizzaPersistens pizzaPersistens = new PizzaPersistens(menu);
         pizzaPersistens.hentPizzasFraCSV("pizza-fil.txt");
         KundePersistens kundePersistens = new KundePersistens();
-        kundePersistens.hentKunderFromCSV("kunde-fil.txt");
+        kundePersistens.hentKunderFraCSV("kunde-fil.txt");
         /*Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
         menu.tilfoejPizza(majs);*/
+        kunder.udskrivKunder();
         System.out.println("Velkommen til Tarik's minions PizzaApp!");
         while(igang)
         {
@@ -153,11 +153,6 @@ public class PizzaApp {
         }
     }
 
-    private static void visKunder()
-    {
-
-        for()
-    }
     //Bliver kaldt i main, og printer menu
     private static void visMuligheder()
     {

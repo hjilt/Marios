@@ -3,7 +3,7 @@ import java.util.*;
 
 public class KundePersistens {
 
-    public void hentKunderFromCSV(String filNavn) {
+    public void hentKunderFraCSV(String filNavn) {
         try (BufferedReader br = new BufferedReader(new FileReader(filNavn))) {
             String line;
             while ((line = br.readLine()) != null) {
