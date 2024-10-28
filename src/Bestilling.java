@@ -6,6 +6,7 @@ public class Bestilling {
     private int ordreID;
     private double totalPris;
     private boolean erLavet;
+    private int pizzaNr;
 
     public Bestilling(Kunde kunde, int ordreID) {
         this.kunde = kunde;
@@ -18,7 +19,6 @@ public class Bestilling {
     public void addPizza(Pizza pizza)
     {
         this.pizza.add(pizza);
-        udregnPris();
     }
 
     public int getOrdreID() {

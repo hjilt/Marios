@@ -35,16 +35,17 @@ public class PizzaApp {
                 case 5:
                     findOrdrer();
                     break;
-                    /*
                 case 6:
-                    visMenu();
+                    menu.visMenu();
                     break;
+                    /*
                 case 7:
                     visKunder();
                     break;
+                     */
                 case 8:
                     igang = false;
-                    break;*/
+                    break;
                 default:
                     System.out.println("Ugyldigt valg - vælg en anden mulighed.");
             }
@@ -122,8 +123,8 @@ public class PizzaApp {
         System.out.println("3: Aktive ordrer");
         System.out.println("4: Tidligere ordrer");
         System.out.println("5: Fremsøg ordrer på ordre-ID");
-        System.out.println("5: Menu-kort");
-        System.out.println("6: Kundekartotek");
-        System.out.println("7: Luk app'en");
+        System.out.println("6: Menu-kort");
+        System.out.println("7: Kundekartotek");
+        System.out.println("8: Luk app'en");
     }
 }
