@@ -29,7 +29,7 @@ public class PizzaApp {
                     bestillingsManager.visAktive();
                     break;
                 case 4:
-                    bestillingsManager.visAfsluttede();
+                    visOrdrer();
                     break;
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
                 case 5:
@@ -110,7 +110,6 @@ public class PizzaApp {
     private static void findOrdrer()
     {
         System.out.println("Søg efter ordreNr: ");
-        BestillingsManager bestillingsManager = new BestillingsManager();
         int ordreID = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Du søgte efter ordreID: " + ordreID);
@@ -119,13 +118,51 @@ public class PizzaApp {
 
     }
 
+    private static void visOrdrer() {
+        System.out.println("Vælg en mulighed:");
+        System.out.println("1: Vis aktive ordrer");
+        System.out.println("2: Vis afsluttede ordrer");
+        System.out.println("3: Vis alle ordrer");
+
+        int valg = brugerValg();
+        boolean fundet = false;
+
+        // Udskriv passende overskrift baseret på valg
+        if (valg == 1) {
+            System.out.println("Aktive bestillinger:");
+        } else if (valg == 2) {
+            System.out.println("Afsluttede bestillinger:");
+        } else {
+            System.out.println("Alle bestillinger:");
+        }
+
+        // Gennemgå ordrer og vis dem baseret på status
+        for (Bestilling bestilling : bestillingsManager.bestillinger) {
+            if ((valg == 1 && !bestilling.getErLavet()) || (valg == 2 && bestilling.getErLavet()) || valg == 3) {
+                bestilling.udskrivOrdre();
+                fundet = true;
+            }
+        }
+
+        // Udskriv besked, hvis der ikke blev fundet nogen ordrer
+        if (!fundet) {
+            if (valg == 1) {
+                System.out.println("Ingen aktive bestillinger");
+            } else if (valg == 2) {
+                System.out.println("Ingen afsluttede bestillinger");
+            } else {
+                System.out.println("Ingen bestillinger fundet");
+            }
+        }
+    }
+
     //Bliver kaldt i main, og printer menu
     private static void visMuligheder()
     {
         System.out.println("\n1: Ny ordre");
         System.out.println("2: Færdiggør ordrer");
         System.out.println("3: Aktive ordrer");
-        System.out.println("4: Tidligere ordrer");
+        System.out.println("4: Vis ordrer");
         System.out.println("5: Fremsøg ordrer på ordre-ID");
         System.out.println("6: Menu-kort");
         System.out.println("7: Kundekartotek");
