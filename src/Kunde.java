@@ -7,7 +7,6 @@ public class Kunde {
     this.navn = navn;
     this.kundeID = kundeID;
     }
-
     public String getNavn() {
         return navn;
     }
@@ -19,4 +18,5 @@ public class Kunde {
     public boolean isErFastKunde() {
         return erFastKunde;
     }
+
 }
