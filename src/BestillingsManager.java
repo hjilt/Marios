@@ -5,6 +5,7 @@ public class BestillingsManager {
     public ArrayList<Bestilling> bestillinger;
     private int bestillingsID;
     private int kundeID;
+
     public BestillingsManager()
     {
         bestillinger = new ArrayList<>();
@@ -44,17 +45,21 @@ public class BestillingsManager {
     //Lav en metode - søge-funktion, der returnerer en Bestilling - den skal tage parameteren ordreID.
 
     public void findBestilling(int ordreID) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Søg efter ordrenummer: ");
-        int inputTal = sc.nextInt();
-
+        boolean fundet = false;
+        for (Bestilling b : bestillinger) {
+            System.out.println("OrdreID i systemet: " + b.getOrdreID());
+        }
         for (Bestilling bestilling : bestillinger) {
-            if (bestillinger.contains(inputTal)) {
-                System.out.println("Ordre nr. " + inputTal + " indeholder: ");
-            } else {
-                System.out.println("Ordre nr. " + inputTal + " findes ikke... prøv igen.");
+
+            if (ordreID == bestilling.getOrdreID()) {
+                System.out.println("Ordre nr. " + ordreID + " indeholder: " + bestilling);
+                fundet = true;
+                break;
             }
         }
+            if (!fundet){
+                System.out.println("Ordre nr. " + ordreID + " findes ikke... prøv igen.");
+            }
+
     }
 }

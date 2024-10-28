@@ -87,9 +87,14 @@ public class PizzaApp {
 
     private static void findOrdrer()
     {
+        System.out.println("Søg efter ordreNr: ");
         BestillingsManager bestillingsManager = new BestillingsManager();
         int ordreID = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Du søgte efter ordreID: " + ordreID);
+
         bestillingsManager.findBestilling(ordreID);
+
     }
 
     //Bliver kaldt i main, og printer menu
@@ -100,8 +105,8 @@ public class PizzaApp {
         System.out.println("3: Aktive ordrer");
         System.out.println("4: Tidligere ordrer");
         System.out.println("5: Fremsøg ordrer på ordre-ID");
-        System.out.println("5: Menu-kort");
-        System.out.println("6: Kundekartotek");
-        System.out.println("7: Luk app'en");
+        System.out.println("6: Menu-kort");
+        System.out.println("7: Kundekartotek");
+        System.out.println("8: Luk app'en");
     }
 }
