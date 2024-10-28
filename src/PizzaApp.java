@@ -15,7 +15,7 @@ public class PizzaApp {
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
         menu.tilfoejPizza(majs);*/
-
+        //push  
         System.out.println("Velkommen til Tarik's minions PizzaApp!");
         while(igang)
         {
