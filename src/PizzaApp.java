@@ -7,11 +7,12 @@ public class PizzaApp {
 
     public static void main(String[] args) {
         boolean igang = true;
-        Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
+        PizzaPersistens persistens = new PizzaPersistens(menu);
+        persistens.hentPizzasFromCSV("pizza-fil.txt");
+        /*Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
-        menu.tilfoejPizza(majs);
-
+        menu.tilfoejPizza(majs);*/
         System.out.println("Velkommen til Tarik's minions PizzaApp!");
         while(igang)
         {
@@ -38,8 +39,7 @@ public class PizzaApp {
                 case 6:
                     menu.visMenu();
                     break;
-                  /*
-                case 7:
+                /*case 7:
                     visKunder();
                     break;
                      */
@@ -97,7 +97,6 @@ public class PizzaApp {
             break;
         }
     }
-
     if (fundetBestilling != null) {
         fundetBestilling.lavPizza();
         System.out.println("Ordre: " + ordreID + " er markeret som færdig.");
@@ -110,13 +109,10 @@ public class PizzaApp {
     private static void findOrdrer()
     {
         System.out.println("Søg efter ordreNr: ");
-        BestillingsManager bestillingsManager = new BestillingsManager();
         int ordreID = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Du søgte efter ordreID: " + ordreID);
-
         bestillingsManager.findBestilling(ordreID);
-
     }
 
     //Bliver kaldt i main, og printer menu

@@ -1,0 +1,41 @@
+Margherita;55;Tomatsauce,Mozzarella,Oregano
+Hawaii;65;Tomatsauce,Mozzarella,Skinke,Ananas
+Pepperoni;60;Tomatsauce,Mozzarella,Pepperoni
+Vesuvio;65;Tomatsauce,Mozzarella,Skinke
+Capricciosa;70;Tomatsauce,Mozzarella,Skinke,Champignon
+Romana;60;Tomatsauce,Mozzarella,Ansjos,Oregano
+Diavola;70;Tomatsauce,Mozzarella,Pepperoni,Chili
+Quattro Stagioni;75;Tomatsauce,Mozzarella,Skinke,Champignon,Artiskok,Oliven
+Prosciutto;65;Tomatsauce,Mozzarella,Skinke
+Napolitana;60;Tomatsauce,Mozzarella,Ansjos,Kapers
+Tropicana;70;Tomatsauce,Mozzarella,Skinke,Ananas
+Bianca;80;Creme Fraiche,Mozzarella,Kartoffel,Rosmarin,Hvidløg
+Primavera;75;Tomatsauce,Mozzarella,Rucola,Parmaskinke,Parmesan
+Gorgonzola;85;Tomatsauce,Mozzarella,Gorgonzola,Valnødder
+Parma;85;Tomatsauce,Mozzarella,Parmaskinke,Rucola,Parmesan
+Siciliana;75;Tomatsauce,Mozzarella,Oliven,Kapers,Ansjos
+Funghi;65;Tomatsauce,Mozzarella,Champignon
+Milano;70;Tomatsauce,Mozzarella,Skinke,Bacon,Løg
+Quattro Formaggi;80;Tomatsauce,Mozzarella,Gorgonzola,Parmesan,Ricotta
+Vegetariana;70;Tomatsauce,Mozzarella,Peberfrugt,Løg,Champignon,Oliven
+Tonno;75;Tomatsauce,Mozzarella,Tun,Løg
+Piccante;70;Tomatsauce,Mozzarella,Pepperoni,Chilipeber
+Carbonara;75;Creme Fraiche,Mozzarella,Bacon,Løg,Æg
+Rustica;80;Tomatsauce,Mozzarella,Bacon,Champignon,Løg
+Montanara;85;Tomatsauce,Mozzarella,Skinke,Kylling,Bacon
+Bolognese;70;Tomatsauce,Mozzarella,Kødsauce,Løg
+Calzone;70;Tomatsauce,Mozzarella,Skinke,(Indbagt)
+Marinara;65;Tomatsauce,Hvidløg,Oregano,Basilikum
+Fiorentina;80;Tomatsauce,Mozzarella,Spinat,Æg
+Tricolore;85;Tomatsauce,Mozzarella,Rucola,Parmaskinke,Tomater
+Casalinga;75;Tomatsauce,Mozzarella,Skinke,Artiskok,Løg
+Mediterranea;80;Tomatsauce,Mozzarella,Feta,Oliven,Peberfrugt
+Pulcinella;70;Tomatsauce,Mozzarella,Champignon,Skinke,Løg
+Emiliana;85;Tomatsauce,Mozzarella,Gorgonzola,Parmaskinke,Løg
+Barbecue;80;BBQ-sauce,Mozzarella,Kylling,Bacon,Løg
+Mexicana;75;Tomatsauce,Mozzarella,Oksekød,Jalapenos,Løg
+Alfredo;85;Creme Fraiche,Mozzarella,Kylling,Champignon,Løg
+Marbella;80;Tomatsauce,Mozzarella,Skinke,Peberfrugt,Oregano
+Romantica;85;Tomatsauce,Mozzarella,Rucola,Parmaskinke,Champignon
+Pollo;75;Tomatsauce,Mozzarella,Kylling,Peberfrugt,Løg
+Scampi;90;Tomatsauce,Mozzarella,Rejer,Hvidløg,Chili

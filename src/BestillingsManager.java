@@ -62,13 +62,10 @@ public class BestillingsManager {
 
     public void findBestilling(int ordreID) {
         boolean fundet = false;
-        for (Bestilling b : bestillinger) {
-            System.out.println("OrdreID i systemet: " + b.getOrdreID());
-        }
         for (Bestilling bestilling : bestillinger) {
-
             if (ordreID == bestilling.getOrdreID()) {
-                System.out.println("Ordre nr. " + ordreID + " indeholder: " + bestilling);
+                System.out.println("Ordre nr. " + ordreID + " indeholder: ");
+                bestilling.udskrivOrdre();
                 fundet = true;
                 break;
             }
@@ -76,6 +73,5 @@ public class BestillingsManager {
             if (!fundet){
                 System.out.println("Ordre nr. " + ordreID + " findes ikke... prøv igen.");
             }
-
     }
 }
