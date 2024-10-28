@@ -27,23 +27,20 @@ public class PizzaApp {
                     ordreFaerdig();
                     break;
                 case 3:
-                    bestillingsManager.visAktive();
-                    break;
-                case 4:
                     visOrdrer();
                     break;
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
-                case 5:
+                case 4:
                     findOrdrer();
                     break;
-                case 6:
+                case 5:
                     menu.visMenu();
                     break;
-                /*case 7:
+                /*case 6:
                     visKunder();
                     break;
                      */
-                case 8:
+                case 7:
                     igang = false;
                     break;
                 default:
@@ -158,11 +155,10 @@ public class PizzaApp {
     {
         System.out.println("\n1: Ny ordre");
         System.out.println("2: Færdiggør ordrer");
-        System.out.println("3: Aktive ordrer");
-        System.out.println("4: Vis ordrer");
-        System.out.println("5: Fremsøg ordrer på ordre-ID");
-        System.out.println("6: Menu-kort");
-        System.out.println("7: Kundekartotek");
-        System.out.println("8: Luk app'en");
+        System.out.println("3: Vis ordrer");
+        System.out.println("4: Fremsøg ordrer på ordre-ID");
+        System.out.println("5: Menu-kort");
+        System.out.println("6: Kundekartotek");
+        System.out.println("7: Luk app'en");
     }
 }

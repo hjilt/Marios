@@ -1,13 +1,13 @@
-import java.util.*;
 import java.io.*;
-public class PizzaPersistens {
-    private Menu menu;
+import java.util.*;
 
-    public PizzaPersistens(Menu menu) {
-        this.menu = menu;
+public class KundePersistens {
+    private ArrayList<Kunde> kunder;
+    public KundePersistens() {
+        this.kunder = new ArrayList<>();
     }
 
-    public void hentPizzasFraCSV(String filNavn) {
+    public void hentKunderFromCSV(String filNavn) {
         try (BufferedReader br = new BufferedReader(new FileReader(filNavn))) {
             String line;
             while ((line = br.readLine()) != null) {
