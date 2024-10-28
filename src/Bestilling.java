@@ -18,7 +18,6 @@ public class Bestilling {
     public void addPizza(Pizza pizza)
     {
         this.pizza.add(pizza);
-        udregnPris();
     }
 
     public int getOrdreID() {

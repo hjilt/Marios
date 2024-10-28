@@ -32,6 +32,7 @@ public class Menu {
         } else {
             System.out.println("Menu:");
             for (Pizza pizza : pizzaListe) {
+                System.out.println("Nr: " + pizza.pizzaNr);
                 System.out.println("Navn: " + pizza.getNavn());
                 System.out.println("Pris: " + pizza.getPris() + " ,- DKK");
                 System.out.println("Beskrivelse: " + pizza.getBeskrivelse());

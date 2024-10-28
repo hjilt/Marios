@@ -9,7 +9,7 @@ public class BestillingsManager {
     public BestillingsManager()
     {
         bestillinger = new ArrayList<>();
-        bestillingsID = 0;
+        bestillingsID = 1;
         kundeID = 1;
     }
 
@@ -25,7 +25,7 @@ public class BestillingsManager {
         System.out.println("Aktive bestillinger: ");
         boolean aktiveBestillinger = false;
         for (Bestilling b : bestillinger) {
-            if(b.getErLavet() == false)
+            if(!b.getErLavet())
             {
                 b.udskrivOrdre();
                 aktiveBestillinger = true;
@@ -34,6 +34,22 @@ public class BestillingsManager {
         if(!aktiveBestillinger)
         {
             System.out.println("Ingen aktive bestillinger");
+        }
+    }
+    public void visAfsluttede()
+    {
+        System.out.println("Afsluttede bestillinger: ");
+        boolean afsluttedeBestillinger = false;
+        for (Bestilling b : bestillinger) {
+            if(b.getErLavet())
+            {
+                b.udskrivOrdre();
+                afsluttedeBestillinger = true;
+            }
+        }
+        if(!afsluttedeBestillinger)
+        {
+            System.out.println("Ingen afsluttede bestillinger");
         }
     }
 

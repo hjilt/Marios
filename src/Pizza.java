@@ -2,11 +2,14 @@ public class Pizza {
     String navn;
     double pris;
     String beskrivelse;
+    private static int nextPizzaNr = 1;
+    int pizzaNr;
 
     public Pizza(String navn, double pris, String beskrivelse) {
         this.navn = navn;
         this.pris = pris;
         this.beskrivelse = beskrivelse;
+        this.pizzaNr = nextPizzaNr++;
     }
 
     public String getBeskrivelse() {

@@ -22,29 +22,30 @@ public class PizzaApp {
                 case 1:
                     lavOrdre();
                     break;
-                /*case 2:
+                case 2:
                     ordreFaerdig();
-                    break;*/
+                    break;
                 case 3:
                     bestillingsManager.visAktive();
                     break;
-                /*case 4:
-                    visFaerdigeBestillinger();
-                    break;*/
+                case 4:
+                    bestillingsManager.visAfsluttede();
+                    break;
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
                 case 5:
                     findOrdrer();
                     break;
-                    /*
                 case 6:
-                    visMenu();
+                    menu.visMenu();
                     break;
+                  /*
                 case 7:
                     visKunder();
                     break;
+                     */
                 case 8:
                     igang = false;
-                    break;*/
+                    break;
                 default:
                     System.out.println("Ugyldigt valg - vælg en anden mulighed.");
             }
@@ -83,6 +84,27 @@ public class PizzaApp {
             }
         }
         System.out.println("Bestillingen er lavet til: " + kundeNavn + ". Pris: " + bestilling.udregnPris());
+    }
+
+    private static void ordreFaerdig() {
+        System.out.println("Indtast ordre-ID for at markere ordre som færdig:");
+    int ordreID = brugerValg();
+    Bestilling fundetBestilling = null;
+
+    for (Bestilling bestilling : bestillingsManager.bestillinger) {
+        if (bestilling.getOrdreID() == ordreID) {
+            fundetBestilling = bestilling;
+            break;
+        }
+    }
+
+    if (fundetBestilling != null) {
+        fundetBestilling.lavPizza();
+        System.out.println("Ordre: " + ordreID + " er markeret som færdig.");
+    }
+    else {
+        System.out.println("Ordre: " + ordreID +" findes ikke.");
+        }
     }
 
     private static void findOrdrer()
