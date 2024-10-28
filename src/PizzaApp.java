@@ -28,9 +28,9 @@ public class PizzaApp {
                 case 3:
                     bestillingsManager.visAktive();
                     break;
-                /*case 4:
-                    visFaerdigeBestillinger();
-                    break;*/
+                case 4:
+                    bestillingsManager.visAfsluttede();
+                    break;
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
                 case 5:
                     findOrdrer();
