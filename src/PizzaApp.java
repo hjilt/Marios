@@ -15,7 +15,7 @@ public class PizzaApp {
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);
         menu.tilfoejPizza(majs);*/
-        kunder.udskrivKunder();
+
         System.out.println("Velkommen til Tarik's minions PizzaApp!");
         while(igang)
         {
@@ -39,10 +39,10 @@ public class PizzaApp {
                 case 5:
                     menu.visMenu();
                     break;
-                /*case 6:
-                    visKunder();
+                case 6:
+                    Kunde.udskrivKunder();
                     break;
-                     */
+
                 case 7:
                     igang = false;
                     break;

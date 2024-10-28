@@ -5,7 +5,7 @@ public class Kunde {
     String navn;
     int kundeID;
     boolean erFastKunde = false;
-    public ArrayList<Kunde> kunder = new ArrayList<>();
+    private static ArrayList<Kunde> kunder = new ArrayList<>();
 
     public Kunde(String navn, boolean erFastKunde) {
     this.navn = navn;
@@ -21,16 +21,16 @@ public class Kunde {
     public int getKundeID() {
         return kundeID;
     }
-    public void udskrivKunder()
+    public static void udskrivKunder()
     {
         for(Kunde k : kunder)
         {
-            System.out.println(k.getNavn());
+            System.out.println("Kundenavn: " + k.getNavn());
+            System.out.println("KundeID: " + k.getKundeID());
+            System.out.println("Er fast: [" + (k.erFastKunde ? "X" : " ") + "]");
         }
     }
-
     public boolean isErFastKunde() {
         return erFastKunde;
     }
-
 }
