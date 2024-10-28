@@ -43,7 +43,7 @@ public class BestillingsManager {
     //lavOrdre, ordre søge funktion, fjern ordre, vis ordre, vis lavede ordre, vis ikke-færdige ordre
     //Lav en metode - søge-funktion, der returnerer en Bestilling - den skal tage parameteren ordreID.
 
-    public static void findBestilling(ArrayList<Bestilling> bestillinger, int ordreID) {
+    public void findBestilling(int ordreID) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Søg efter ordrenummer: ");

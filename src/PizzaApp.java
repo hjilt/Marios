@@ -25,20 +25,24 @@ public class PizzaApp {
                 /*case 2:
                     ordreFaerdig();
                     break;*/
-                case 2:
+                case 3:
                     bestillingsManager.visAktive();
                     break;
                 /*case 4:
                     visFaerdigeBestillinger();
-                    break;
+                    break;*/
                 //Under visMenu skal der også være logik/muligheder for at tilføje og fjerne fra menuen
                 case 5:
+                    findOrdrer();
+                    break;
+                    /*
+                case 6:
                     visMenu();
                     break;
-                case 6:
+                case 7:
                     visKunder();
                     break;
-                case 7:
+                case 8:
                     igang = false;
                     break;*/
                 default:
@@ -58,23 +62,34 @@ public class PizzaApp {
     private static void lavOrdre() {
         System.out.println("Angiv kundens navn: ");
         scanner.nextLine();
+        //Opretter bestillingen som objekt
         String kundeNavn = scanner.nextLine();
         Bestilling bestilling = bestillingsManager.lavBestilling(kundeNavn);
+        //Tilføjer pizzaer til objektet
         System.out.println("Angiv Pizza-nummer for at tilføje den til bestillingen - tryk 0 når ordren er færdig: ");
         while(true)
         {
-            int pizzaNummer = scanner.nextInt();
-            if(pizzaNummer == 0)
-                break;
-            if (pizzaNummer > 0 && pizzaNummer <= menu.pizzaListe.size()) {
-                Pizza valgtPizza = menu.pizzaListe.get(pizzaNummer-1);
-                bestilling.addPizza(valgtPizza);
-                System.out.println("Tilføjet " + valgtPizza.getNavn() + " til bestillingen.");
-            } else {
-                System.out.println("Ugyldigt pizza-nummer, prøv igen.");
+            if(scanner.hasNextInt()) {
+                int pizzaNummer = scanner.nextInt();
+                if (pizzaNummer == 0)
+                    break;
+                if (pizzaNummer > 0 && pizzaNummer <= menu.pizzaListe.size()) {
+                    Pizza valgtPizza = menu.pizzaListe.get(pizzaNummer - 1);
+                    bestilling.addPizza(valgtPizza);
+                    System.out.println("Tilføjet " + valgtPizza.getNavn() + " til bestillingen.");
+                } else {
+                    System.out.println("Ugyldigt pizza-nummer, prøv igen.");
+                }
             }
         }
         System.out.println("Bestillingen er lavet til: " + kundeNavn + ". Pris: " + bestilling.udregnPris());
+    }
+
+    private static void findOrdrer()
+    {
+        BestillingsManager bestillingsManager = new BestillingsManager();
+        int ordreID = scanner.nextInt();
+        bestillingsManager.findBestilling(ordreID);
     }
 
     //Bliver kaldt i main, og printer menu
@@ -84,6 +99,7 @@ public class PizzaApp {
         System.out.println("2: Færdiggør ordrer");
         System.out.println("3: Aktive ordrer");
         System.out.println("4: Tidligere ordrer");
+        System.out.println("5: Fremsøg ordrer på ordre-ID");
         System.out.println("5: Menu-kort");
         System.out.println("6: Kundekartotek");
         System.out.println("7: Luk app'en");
