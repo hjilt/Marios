@@ -8,7 +8,7 @@ public class PizzaApp {
     public static void main(String[] args) {
         boolean igang = true;
         PizzaPersistens persistens = new PizzaPersistens(menu);
-        persistens.hentPizzasFromCSV("pizza-fil.txt");
+        persistens.hentPizzasFraCSV("pizza-fil.txt");
         /*Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
         Pizza majs = new Pizza("Dynamit", 129, "æfeg");
         menu.tilfoejPizza(tun);

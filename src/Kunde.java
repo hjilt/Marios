@@ -18,5 +18,5 @@ public class Kunde {
     public boolean isErFastKunde() {
         return erFastKunde;
     }
-
+    
 }
