@@ -6,6 +6,7 @@ public class Kunde {
     int kundeID;
     boolean erFastKunde = false;
     private static ArrayList<Kunde> kunder = new ArrayList<>();
+    public ArrayList<Bestilling> bestillinger = new ArrayList<>();
 
     public Kunde(String navn, boolean erFastKunde) {
     this.navn = navn;
@@ -23,7 +24,7 @@ public class Kunde {
     }
 
     public static Kunde getKunde(int kundeID) {
-        if(kundeID > 0 && kundeID < kunder.size()) {
+        if(kundeID > 0 && kundeID < kunder.size()+1) {
             return kunder.get(kundeID - 1);
         }
         else
@@ -31,6 +32,14 @@ public class Kunde {
             System.out.println("Kunden er ikke fundet, prøv igen");
             return null;
         }
+    }
+
+    public void addBestilling(Bestilling bestilling) {
+        bestillinger.add(bestilling);
+    }
+
+    public ArrayList<Bestilling> getBestillinger() {
+        return bestillinger;
     }
 
     public static void udskrivKunder()
@@ -42,7 +51,7 @@ public class Kunde {
             System.out.println("Er fast: [" + (k.erFastKunde ? "X" : " ") + "]");
         }
     }
-    public boolean isErFastKunde() {
-        return erFastKunde;
+    public void fastKunde() {
+        this.erFastKunde = true;
     }
 }

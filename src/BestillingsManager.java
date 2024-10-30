@@ -13,49 +13,11 @@ public class BestillingsManager {
         kundeID = 1;
     }
 
-    public Bestilling lavBestilling(String kundeNavn) {
-        Kunde kunde = new Kunde(kundeNavn, false);
+    public Bestilling lavBestilling(Kunde kunde) {
         Bestilling bestilling = new Bestilling(kunde,bestillingsID++);
         bestillinger.add(bestilling);
         return bestilling;
     }
-
-    public void visAktive()
-    {
-        System.out.println("Aktive bestillinger: ");
-        boolean aktiveBestillinger = false;
-        for (Bestilling b : bestillinger) {
-            if(!b.getErLavet())
-            {
-                b.udskrivOrdre();
-                aktiveBestillinger = true;
-            }
-        }
-        if(!aktiveBestillinger)
-        {
-            System.out.println("Ingen aktive bestillinger");
-        }
-    }
-    public void visAfsluttede()
-    {
-        System.out.println("Afsluttede bestillinger: ");
-        boolean afsluttedeBestillinger = false;
-        for (Bestilling b : bestillinger) {
-            if(b.getErLavet())
-            {
-                b.udskrivOrdre();
-                afsluttedeBestillinger = true;
-            }
-        }
-        if(!afsluttedeBestillinger)
-        {
-            System.out.println("Ingen afsluttede bestillinger");
-        }
-    }
-
-    /*public boolean Bestilling(){
-        if (getErLavet(true))
-    }*/
 
     //lavOrdre, ordre søge funktion, fjern ordre, vis ordre, vis lavede ordre, vis ikke-færdige ordre
     //Lav en metode - søge-funktion, der returnerer en Bestilling - den skal tage parameteren ordreID.

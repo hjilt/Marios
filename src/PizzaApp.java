@@ -11,11 +11,6 @@ public class PizzaApp {
         pizzaPersistens.hentPizzasFraCSV("pizza-fil.txt");
         KundePersistens kundePersistens = new KundePersistens();
         kundePersistens.hentKunderFraCSV("kunde-fil.txt");
-        /*Pizza tun = new Pizza("Napolitana", 100, "æg og løg");
-        Pizza majs = new Pizza("Dynamit", 129, "æfeg");
-        menu.tilfoejPizza(tun);
-        menu.tilfoejPizza(majs);*/
-        //push
         System.out.println("Velkommen til Tarik's minions PizzaApp!");
         while(igang)
         {
@@ -65,29 +60,32 @@ public class PizzaApp {
         System.out.println("2: Allerede eksisterende kunde");
         int valg = brugerValg();
         if(valg > 0 && valg < 3) {
+            Kunde kunde;
             if (valg == 1)
             {
                 System.out.println("Angiv kundens navn: ");
                 scanner.nextLine();
                 //Opretter bestillingen som objekt
                 String kundeNavn = scanner.nextLine();
-                Bestilling bestilling = bestillingsManager.lavBestilling(kundeNavn);
-                tilfoejPizzaerTilBestilling(bestilling);
-                System.out.println("Bestillingen er lavet til: " + kundeNavn + ". Pris: " + bestilling.udregnPris());
+                kunde = new Kunde(kundeNavn, false);
                 //Tilføjer pizzaer til objektet
             }
             else
             {
                 Kunde.udskrivKunder();
-                System.out.println("Angiv kundeID på den ønske kunde: ");
+                System.out.println("Angiv kundeID på den ønskede kunde: ");
                 int kundeValg = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println(Kunde.getKunde(kundeValg).getNavn() + " er valgt.");
-                Kunde eksisterendeKunde = Kunde.getKunde(kundeValg);
-                Bestilling bestilling = bestillingsManager.lavBestilling(eksisterendeKunde.getNavn());
-                tilfoejPizzaerTilBestilling(bestilling);
-                System.out.println("Bestillingen er lavet til: " + eksisterendeKunde.getNavn() + ". Pris: " + bestilling.udregnPris());
+                kunde = Kunde.getKunde(kundeValg);
+
             }
+            Bestilling bestilling = bestillingsManager.lavBestilling(kunde);
+            tilfoejPizzaerTilBestilling(bestilling);
+            System.out.println("Bestillingen er lavet til: " + kunde.getNavn() + ". Pris: " + bestilling.udregnPris());
+            if(kunde.getBestillinger().size() >= 2)
+                kunde.fastKunde();
+            kunde.addBestilling(bestilling);
         }
         else
             System.out.println("Ugyldigt input, prøv igen");
@@ -99,7 +97,7 @@ public class PizzaApp {
             if (scanner.hasNextInt()) {
                 int pizzaNummer = scanner.nextInt();
                 if (pizzaNummer == 0) break;
-                if (pizzaNummer > 0 && pizzaNummer <= menu.pizzaListe.size()) {
+                else if (pizzaNummer > 0 && pizzaNummer <= menu.pizzaListe.size()) {
                     Pizza valgtPizza = menu.pizzaListe.get(pizzaNummer - 1);
                     bestilling.addPizza(valgtPizza);
                     System.out.println("Tilføjet " + valgtPizza.getNavn() + " til bestillingen.");
